@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: example-deployment
+  labels:
+    app: example
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: example
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: example
+    spec:
+      containers:
+      - name: example
+        image: docker.internal.sysdig.com/liberty-8-jvm-example:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 9080
+          name: http
+        resources: {}
+      restartPolicy: Always
+status: {}

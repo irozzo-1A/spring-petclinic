@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<server description="new server">
+
+    <!-- Enable features -->
+    <featureManager>
+        <!-- <feature></feature> -->
+        <feature>springBoot-2.0</feature>
+        <feature>servlet-3.1</feature>
+    </featureManager>
+
+    <springBootApplication location="spring-petclinic-2.6.0-SNAPSHOT.jar"/>
+    <application type="spring" location="spring-petclinic-2.6.0-SNAPSHOT.jar"/>
+    <httpEndpoint id="defaultHttpEndpoint" host="*" httpPort="8080" />
+
+</server>
